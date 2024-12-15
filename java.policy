@@ -1,0 +1,13 @@
+grant {
+    // Permite conexiones al puerto 1099 (registro RMI)
+    permission java.net.SocketPermission "localhost:1099", "connect,resolve";
+
+    // Permite lectura y escritura en todos los archivos
+    permission java.io.FilePermission "<<ALL FILES>>", "read,write";
+
+    // Permite definir y exportar clases RMI
+    permission java.lang.RuntimePermission "accessClassInPackage.sun.rmi.server";
+
+    // Permite la creación de registros RMI locales
+    permission java.rmi.RMISecurityManager;
+};
